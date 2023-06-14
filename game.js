@@ -17,4 +17,7 @@ function getComputerChoice() {
 
 }
 
-console.log(getComputerChoice());
+let computerSelection = getComputerChoice();
+let playerSelection = prompt("Rock, Paper or Scissors?!");
+console.log(computerSelection);
+console.log(playerSelection);
