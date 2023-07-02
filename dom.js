@@ -69,33 +69,34 @@ function playRound(playerSelection, computerSelection) {
     let y = computerSelection.toUpperCase(); // make both selections uppercase to make it case insensitive.
 
     if (x === y){ //begin by checking for a tie.
-        return `The round is a tie! Both players chose ${x}`
+        return y;
+
     }
 
     if (x === 'ROCK'){
         if (y === 'PAPER'){
-            return `You Lose! CPU chose ${y} and you chose ${x}`
+            return ['You Lose!', y];
         }
         else if (y === 'SCISSORS'){
-            return `You win! CPU chose ${y} and you chose ${x}`
+            return ['You win!', y];
         }
     }
 
     else if (x === 'PAPER'){
         if (y === 'SCISSORS'){
-            return `You Lose! CPU chose ${y} and you chose ${x}`
+            return ['You Lose!', y];
         }
         else if (y === 'ROCK'){
-            return `You win! CPU chose ${y} and you chose ${x}`
+            return ['You win!', y];
         }
     }
 
     else if (x === 'SCISSORS'){
         if (y === 'ROCK'){
-            return `You Lose! CPU chose ${y} and you chose ${x}`
+            return ['You Lose!', y];
         }
         else if (y === 'PAPER'){
-            return `You win! CPU chose ${y} and you chose ${x}`
+            return ['You win!', y];
         }
     }
   
@@ -108,13 +109,21 @@ btnRock.addEventListener('click', function (e) {
 
     let result = playRound('Rock', getComputerChoice());
 
-    console.log(result);
+    console.log(result[0]);
 
-    if (result.slice(0,7)=='You win'){
+    if (result[0].slice(0,7)=='You win'){
+        titleInfo.style.color = 'Blue';
+        titleInfo.textContent = `You win! You chose rock and the cpu chose ${result[1]}`
         playerScore++;
     }
-    else if (result.slice(0, 8)=='You Lose') {
+    else if (result[0].slice(0, 8)=='You Lose') {
+        titleInfo.style.color = 'Red';
+        titleInfo.textContent = `You lose! You chose rock and the cpu chose ${result[1]}`
         cpuScore++;
+    }
+    else {
+        titleInfo.style.color = 'White';
+        titleInfo.textContent = `That round was a tie! Both players chose rock`
     }
 
     myScore.textContent = `Your Score: ${playerScore}`;
@@ -126,13 +135,21 @@ btnRock.addEventListener('click', function (e) {
 
     let result = playRound('Paper', getComputerChoice());
 
-    console.log(result);
+    console.log(result[0]);
 
-    if (result.slice(0,7)=='You win'){
+    if (result[0].slice(0,7)=='You win'){
+        titleInfo.style.color = 'Blue';
+        titleInfo.textContent = `You win! You chose paper and the cpu chose ${result[1]}`
         playerScore++;
     }
-    else if (result.slice(0, 8)=='You Lose') {
+    else if (result[0].slice(0, 8)=='You Lose') {
+        titleInfo.style.color = 'Red';
+        titleInfo.textContent = `You lose! You chose paper and the cpu chose ${result[1]}`
         cpuScore++;
+    }
+    else {
+        titleInfo.style.color = 'White';
+        titleInfo.textContent = `That round was a tie! Both players chose paper`
     }
 
     myScore.textContent = `Your Score: ${playerScore}`;
@@ -144,14 +161,21 @@ btnRock.addEventListener('click', function (e) {
 
     let result = playRound('Scissors', getComputerChoice());
 
-    console.log(result);
+    console.log(result[0]);
 
-    if (result.slice(0,7)=='You win'){
-
+    if (result[0].slice(0,7)=='You win'){
+        titleInfo.style.color = 'Blue';
+        titleInfo.textContent = `You win! You chose scissors and the cpu chose ${result[1]}`
         playerScore++;
     }
-    else if (result.slice(0, 8)=='You Lose') {
+    else if (result[0].slice(0, 8)=='You Lose') {
+        titleInfo.style.color = 'Red';
+        titleInfo.textContent = `You lose! You chose scissors and the cpu chose ${result[1]}`
         cpuScore++;
+    }
+    else {
+        titleInfo.style.color = 'White';
+        titleInfo.textContent = `That round was a tie! Both players chose scissors`
     }
 
     myScore.textContent = `Your Score: ${playerScore}`;
