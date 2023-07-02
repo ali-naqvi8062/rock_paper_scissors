@@ -2,6 +2,8 @@ const btn = document.querySelector('.play');
 
 const gameBox = document.querySelector('.game');
 
+const titleInfo = document.querySelector('.welcome');
+
 const btnRock = document.createElement('button');
 const btnPaper = document.createElement('button');
 const btnScissors = document.createElement('button');
@@ -145,6 +147,7 @@ btnRock.addEventListener('click', function (e) {
     console.log(result);
 
     if (result.slice(0,7)=='You win'){
+
         playerScore++;
     }
     else if (result.slice(0, 8)=='You Lose') {
