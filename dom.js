@@ -21,12 +21,13 @@ let container = document.querySelector('#content');
 const placeHolder = document.createElement('div')
 const myScore = document.createElement('div');
 const cpuSelect = document.createElement('div');
+const endGame = document.createElement('button')
 
 placeHolder.classList.add('score');
 
 myScore.textContent = 'Your Score: ';
 cpuSelect.textContent = 'CPU Score: ';
-
+endGame.textContent = 'End Game';
 
 btn.addEventListener('click', function (e) {
 
@@ -39,10 +40,18 @@ btn.addEventListener('click', function (e) {
     container.appendChild(placeHolder);
 
     placeHolder.appendChild(myScore);
+    placeHolder.appendChild(endGame);
     placeHolder.appendChild(cpuSelect);
 
 
+
   });
+
+  endGame.addEventListener('click', function (e) {
+
+    location.reload();
+
+  })
 
   function getComputerChoice() {
 
