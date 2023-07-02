@@ -12,14 +12,23 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
-    gap: 55px;
+    gap: 40px;
 }
 
 .title {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 55px;
     font-family: 'Fancy', Impact, sans-serif;
-    font-weight: 800;
+    font-weight: 1000;
+}
+
+.welcome {
+
+    font-size: 14px;
+    font-family: 'Fancy', Impact, sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+
 }
 
 .game{
@@ -59,11 +68,12 @@ body {
 .score {
 
     display:flex;
-    gap:400px;
+    gap:350px;
     margin-top: 0px;
     margin-bottom: 20px;
     font-size: 18px;
     font-family: 'Fancy', Impact, sans-serif;
     font-weight: 600;
+    letter-spacing: 3px;
 
 }
