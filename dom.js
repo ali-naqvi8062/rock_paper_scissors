@@ -83,40 +83,63 @@ function playRound(playerSelection, computerSelection) {
   
 }
 
-function game() {
-
-    let count = 0;
-    let cpuScore = 0;
-    let playerScore = 0;
-    while (count < 5){
-
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("Rock, Paper or Scissors?!");
-        let result = playRound(playerSelection, computerSelection);
-        if (result.slice(0,7)==='You win'){
-            playerScore++;
-        }
-        else if (result.slice(0, 8)==='You Lose') {
-            cpuScore++
-        }
-        console.log(result);
-        count++;
-    }
-
-    return `CPU score: ${cpuScore}, player score: ${playerScore}`
-
-}
+let playerScore = 0;
+let cpuScore = 0;
 
 btnRock.addEventListener('click', function (e) {
-    console.log(playRound('Rock', getComputerChoice()));
+
+    let result = playRound('Rock', getComputerChoice());
+
+    console.log(result);
+
+    if (result.slice(0,7)=='You win'){
+        playerScore++;
+    }
+    else if (result.slice(0, 8)=='You Lose') {
+        cpuScore++;
+    }
+
+    console.log(`CPU score: ${cpuScore}`);
+    console.log(`Player score: ${playerScore}`);
+
   });
 
-btnPaper.addEventListener('click', function (e) {
-    console.log(playRound('Paper', getComputerChoice()));
+  btnPaper.addEventListener('click', function (e) {
+
+    let result = playRound('Paper', getComputerChoice());
+
+    console.log(result);
+
+    if (result.slice(0,7)=='You win'){
+        playerScore++;
+    }
+    else if (result.slice(0, 8)=='You Lose') {
+        cpuScore++;
+    }
+
+    console.log(`CPU score: ${cpuScore}`);
+    console.log(`Player score: ${playerScore}`);
+
   });
 
-btnScissors.addEventListener('click', function (e) {
-    console.log(playRound('Scissors', getComputerChoice()));
+  btnScissors.addEventListener('click', function (e) {
+
+    let result = playRound('Scissors', getComputerChoice());
+
+    console.log(result);
+
+    if (result.slice(0,7)=='You win'){
+        playerScore++;
+    }
+    else if (result.slice(0, 8)=='You Lose') {
+        cpuScore++;
+    }
+
+    console.log(`CPU score: ${cpuScore}`);
+    console.log(`Player score: ${playerScore}`);
+
   });
+
+
 
   
