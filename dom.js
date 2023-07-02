@@ -14,6 +14,17 @@ btnRock.textContent = 'Rock';
 btnPaper.textContent = 'Paper';
 btnScissors.textContent = 'Scissors';
 
+let container = document.querySelector('#content');
+
+const placeHolder = document.createElement('div')
+const myScore = document.createElement('div');
+const cpuSelect = document.createElement('div');
+
+placeHolder.classList.add('score');
+
+myScore.textContent = 'Your Score: ';
+cpuSelect.textContent = 'CPU Score: ';
+
 
 btn.addEventListener('click', function (e) {
 
@@ -22,6 +33,11 @@ btn.addEventListener('click', function (e) {
     gameBox.appendChild(btnRock);
     gameBox.appendChild(btnPaper);
     gameBox.appendChild(btnScissors);
+
+    container.appendChild(placeHolder);
+
+    placeHolder.appendChild(myScore);
+    placeHolder.appendChild(cpuSelect);
 
 
   });
@@ -99,8 +115,8 @@ btnRock.addEventListener('click', function (e) {
         cpuScore++;
     }
 
-    console.log(`CPU score: ${cpuScore}`);
-    console.log(`Player score: ${playerScore}`);
+    myScore.textContent = `Your Score: ${playerScore}`;
+    cpuSelect.textContent = `CPU Score: ${cpuScore}`;
 
   });
 
@@ -117,8 +133,8 @@ btnRock.addEventListener('click', function (e) {
         cpuScore++;
     }
 
-    console.log(`CPU score: ${cpuScore}`);
-    console.log(`Player score: ${playerScore}`);
+    myScore.textContent = `Your Score: ${playerScore}`;
+    cpuSelect.textContent = `CPU Score: ${cpuScore}`;
 
   });
 
@@ -135,8 +151,8 @@ btnRock.addEventListener('click', function (e) {
         cpuScore++;
     }
 
-    console.log(`CPU score: ${cpuScore}`);
-    console.log(`Player score: ${playerScore}`);
+    myScore.textContent = `Your Score: ${playerScore}`;
+    cpuSelect.textContent = `CPU Score: ${cpuScore}`;
 
   });
 
