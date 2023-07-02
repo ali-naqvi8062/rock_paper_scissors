@@ -24,10 +24,11 @@ body {
 
 .game{
     border:1px solid black;
-    padding-left: 300px;
-    padding-right: 300px;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    height: 350px;
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -36,5 +37,10 @@ body {
     font-family: 'Fancy', Impact, sans-serif;
     font-weight: 800;
     padding: 5px;
+    cursor: pointer;
+    transition
 }
 
+.play:hover {
+    font-size: 30px;
+}
